@@ -8,4 +8,4 @@ class Role(models.Model):
     )
     
     id = models.BigAutoField(primary_key=True)
-    role_choose = models.CharField(max_length=1, choices=ROLE_CHOOSE)
+    role_choose = models.CharField(max_length=2, choices=ROLE_CHOOSE)
