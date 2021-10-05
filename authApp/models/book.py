@@ -8,7 +8,7 @@ class Book(models.Model):
     year = models.DateField('Year')
     publisher = models.CharField('Publisher', max_length = 30)
     genre = models.CharField('Genre', max_length = 60)
-    number = models.IntegerField
+    number = models.IntegerField('Version', default=1)
 
 
 
