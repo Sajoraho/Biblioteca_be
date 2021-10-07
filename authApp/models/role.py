@@ -2,9 +2,9 @@ from django.db import models
 
 class Role(models.Model):
     ROLE_CHOOSE = (
-        ('AD','Administrador'),
-        ('BI','Bibliotecario'),
-        ('ES','Estudiante'),
+        ('Administrador','Administrador'),
+        ('Bibliotecario','Bibliotecario'),
+        ('Estudiante','Estudiante'),
     )
     
     id = models.BigAutoField(primary_key=True)
