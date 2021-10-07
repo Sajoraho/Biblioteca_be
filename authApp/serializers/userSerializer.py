@@ -8,7 +8,7 @@ class UserSerializer(serializers.ModelSerializer):
     register = RegisterSerializer() 
     class Meta: 
         model = User 
-        fields = ['id', 'username', 'password', 'name', 'lastname', 'email'] 
+        fields = ['id', 'username', 'password', 'name', 'lastname', 'email', 'register'] 
  
     def create(self, validated_data): 
         registerData = validated_data.pop('register') 
@@ -20,18 +20,18 @@ class UserSerializer(serializers.ModelSerializer):
         user = User.objects.get(id=obj.id) 
         register = Register.objects.get(user=obj.id)        
         return { 
-                    'id': user.id,  
-                    'username': user.username, 
-                    'password': user.password, 
-                    'name': user.name, 
-                    'lastname': user.lastname,
-                    'email': user.email,
-                    'register': { 
-                        'id': register.id, 
-                        'institution': register.institution, 
-                        'address': register.address, 
-                        'telephone': register.telephone,
-                        'user': register.user,
-                        'role': register.role, 
+            'id': user.id,  
+            'username': user.username, 
+            'password': user.password, 
+            'name': user.name, 
+            'lastname': user.lastname,
+            'email': user.email,
+            'register': { 
+                    'id': register.id, 
+                    'institution': register.institution, 
+                    'address': register.address, 
+                    'telephone': register.telephone,
+                    'user': register.user,
+                    'role': register.role, 
                     } 
                 }
