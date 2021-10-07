@@ -1,4 +1,4 @@
-from django.db import models
+from django.db import models 
 
 class Role(models.Model):
     ROLE_CHOOSE = (
