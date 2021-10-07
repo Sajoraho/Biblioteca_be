@@ -33,5 +33,5 @@ class UserSerializer(serializers.ModelSerializer):
                     'telephone': register.telephone,
                     'user': register.user,
                     'role': register.role, 
-                    } 
-                }
+            } 
+        }
