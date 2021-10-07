@@ -8,5 +8,5 @@ class Register(models.Model):
     institution = models.CharField('Institution', max_length = 60)
     address = models.CharField('Address', max_length = 30)
     telephone = models.CharField('Telephone', max_length = 30)
-    user = models.ForeignKey(User, related_name='username', on_delete=models.CASCADE)
-    role = models.ForeignKey(Role, related_name='role_choose', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name='register', on_delete=models.CASCADE)
+    role = models.ForeignKey(Role, related_name='register', on_delete=models.CASCADE)
