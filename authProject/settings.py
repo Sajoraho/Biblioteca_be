@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import django_heroku
 from pathlib import Path
 from datetime import timedelta
 
@@ -98,16 +99,16 @@ WSGI_APPLICATION = 'authProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = { 
- 'default': { 
- 'ENGINE': 'django.db.backends.postgresql_psycopg2', 
- 'NAME': 'd93siab6ihljpm', 
- 'USER': 'ybtbdrvxpptmxq', 
- 'PASSWORD': '7578121b80cf95db296e696bc52b1b9d3d2d770cba21d298a9df9b43a021b81d', 
- 'HOST': 'ec2-34-197-135-44.compute-1.amazonaws.com', 
- 'PORT': '5432', 
- } 
-} 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd93siab6ihljpm',  # Nombre de la base de datos.
+        'USER': 'ybtbdrvxpptmxq',
+        'PASSWORD': '7578121b80cf95db296e696bc52b1b9d3d2d770cba21d298a9df9b43a021b81d',
+        'HOST': 'ec2-34-197-135-44.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 
 
 # Password validation
@@ -153,5 +154,4 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-import django_heroku
 django_heroku.settings(locals())
