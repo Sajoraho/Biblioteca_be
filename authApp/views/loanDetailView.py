@@ -7,6 +7,6 @@ from rest_framework.permissions import IsAuthenticated
 from authApp.models.loan import Loan 
 from authApp.serializers.loanSerializer import LoanSerializer 
 
-class UserDetailView(generics.RetrieveAPIView): 
+class LoanDetailView(generics.RetrieveAPIView): 
     queryset = Loan.objects.all() 
     serializer_class = LoanSerializer 

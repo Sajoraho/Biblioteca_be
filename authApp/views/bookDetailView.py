@@ -7,6 +7,6 @@ from rest_framework.permissions import IsAuthenticated
 from authApp.models.book import Book 
 from authApp.serializers.bookSerializer import BookSerializer 
 
-class UserDetailView(generics.RetrieveAPIView): 
+class BookDetailView(generics.RetrieveAPIView): 
     queryset = Book.objects.all() 
     serializer_class = BookSerializer 
