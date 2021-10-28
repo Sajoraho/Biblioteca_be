@@ -5,7 +5,7 @@ from authApp.serializers.bookSerializer import BookSerializer
 from authApp.models.book import Book
 from rest_framework.decorators import action
 
-class BookCreateView(generics.ListCreateAPIview):
+class BookCreateView(generics.ListCreateAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
 
