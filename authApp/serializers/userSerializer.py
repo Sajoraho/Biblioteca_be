@@ -31,6 +31,6 @@ class UserSerializer(serializers.ModelSerializer):
                     'institution': register.institution, 
                     'address': register.address, 
                     'telephone': register.telephone,
-                    'role': register.role, 
+                    'role': register.role_choose, 
             } 
         }
