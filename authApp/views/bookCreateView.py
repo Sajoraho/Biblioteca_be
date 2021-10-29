@@ -11,12 +11,12 @@ class BookCreateView(generics.ListCreateAPIView):
     @action(methods=['post'], detail=True)
     def post(self, request, *args, **kwargs):
         serializer = BookSerializer(data=request.data)
-        serializer.is_valid(data=request.data)
+        serializer.is_valid(raise_exception=True)
         serializer.save()
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     
     @action(methods=['get'], detail=True)
     def get_queryset(self):
-        return Book().objects.filter()
+        return Book.objects.filter()
     
